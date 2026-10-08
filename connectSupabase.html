@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- 1. Fetch the library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+  </head>
+  <body>
+
+    <h1>Connect to Supabase</h1>
+
+    <!-- <div>
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </div> -->
+
+
+    <script>
+      const supabaseURL = "https://lqwdjtnqmoiiijhbpeos.supabase.co";
+      const supabaseKEY = "sb_publishable_uQt4iEjcbDNc9elLz3PL8g_-a3E6ChV";
+      const db = supabase.createClient(supabaseURL, supabaseKEY);
+    </script>
+
+    <script>
+
+      async function getTheData() {
+        console.log("Fetching penguins...");
+        let result = await db.from("penguins.csv").select("*");
+        let data = result.data;
+        window.gdata = data;
+
+        console.log(data);
+        console.log("we have " + data.length + " rows of data in penguins");
+        
+        displayData();
+      }
+
+      function displayData(){
+        if(window.gdata){
+            const container = document.createElement("div");
+            container.innerHTML = "<h2> Penguins Data </h2>";
+            const list = document.createElement("ul");
+
+            window.gdata.forEach((row) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `species: ${row.species}, island: ${row.island}, body_mass_g: ${row.body_mass_g}`;
+                list.appendChild(listItem);
+            });
+
+            container.appendChild(list);
+            document.body.appendChild(container);
+            
+        } else {
+            console.log("No data available to display.");
+        }
+      }
+      getTheData();
+    </script>
+  </body>
+</html>
