@@ -1,47 +1,99 @@
 /*Global*/
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 /*Whole body*/
 body {
-    background-color: #a78080;
-    font-family: 'Poppins', sans-serif;
-}  
+  background-color: #a78080;
+  font-family: "Poppins", sans-serif;
+}
 h1 {
-    text-align: center;
-    margin: 20px;
-    color: #fff;
+  text-align: center;
+  margin: 20px;
+  color: #fff;
 }
 
 .sign-in-form {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    padding: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+}
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+pre {
+  background-color: #f4f4f5;
 
-    .button{
-        padding: 5px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+  border: 1px solid #e4e4e7;
 
-        /* display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: center;
-        align-items: center; */
-    }
+  border-radius: 6px;
+
+  padding: 16px;
+
+  margin: 1.5em 0;
+
+  overflow-x: auto;
+
+  /* Adds a horizontal scrollbar if the code is too wide */
+
+  max-width: 100%;
+}
+
+/* code text styling */
+
+code {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+
+  font-size: 0.9em;
+
+  color: #18181b;
+
+  direction: ltr;
+
+  text-align: left;
+
+  white-space: pre;
+
+  word-spacing: normal;
+
+  word-break: normal;
+
+  line-height: 1.5;
+
+  tab-size: 4;
+}
+
+.status {
+  position: fixed;
+
+  top: 0;
+
+  right: 0;
+
+  padding: 8px;
+
+  color: dodgerblue;
+
+  h3 {
+    margin: 0;
+  }
 }
