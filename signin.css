@@ -1,0 +1,47 @@
+/*Global*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/*Whole body*/
+body {
+    background-color: #a78080;
+    font-family: 'Poppins', sans-serif;
+}  
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: #fff;
+}
+
+.sign-in-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .button{
+        padding: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        /* display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center; */
+    }
+}
