@@ -53,8 +53,12 @@ async function logOut(){
 
 // function for Sign-up/Registser-user section 
 async function handleSignUp(){
-    const userEmail = document.querySelector("#signup-email").value.trim;
-    const userPassword = document.querySelector("#signup-password").value.trim;
+    const userEmail = document.querySelector("#signup-email").value.trim();
+    const userPassword = document.querySelector("#signup-password").value.trim();
+
+    console.log("hello");
+    console.log(userEmail);
+    console.log(userPassword);
 
     if(userEmail == "" || userPassword == ""){
         console.warn("Email or password is empty.");
