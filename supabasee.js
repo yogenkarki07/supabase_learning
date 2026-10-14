@@ -1,3 +1,4 @@
+// function for Sign-in/log-in section 
 async function handleSignIn() {
     const userEmail = document.querySelector("#email").value.trim();
     const userPassword = document.querySelector("#password").value.trim();
@@ -7,6 +8,7 @@ async function handleSignIn() {
         return;
     }
 
+    //call supabase's signIn method
     let result = await db.auth.signInWithPassword({
         email: userEmail,
         password: userPassword,
@@ -26,6 +28,7 @@ async function handleSignIn() {
     }
 }
 
+//function -- checkSession
 async function checkSession(){
     const res = await db.auth.getSession();
     let status  = document.querySelector(".status span");
@@ -41,9 +44,41 @@ async function checkSession(){
     }
 }
 
+checkSession();
+
 async function logOut(){
     await db.auth.signOut();
     checkSession();
 }
 
-checkSession();
+// function for Sign-up/Registser-user section 
+async function handleSignUp(){
+    const userEmail = document.querySelector("#signup-email").value.trim;
+    const userPassword = document.querySelector("#signup-password").value.trim;
+
+    if(userEmail == "" || userPassword == ""){
+        console.warn("Email or password is empty.");
+        alert("Please, enter both email and password");
+        return;
+    }
+
+    //call Supabase signUp method
+    let result = await db.auth.signUp({
+        email: userEmail,
+        password: userPassword,
+    });
+
+    let data = result.data;
+    let error = result.error;
+
+    if(error){
+        alert("Sign-up failed: " + error.message);
+        return;
+    }
+
+    if(data){
+        console.log("Sign-up successful: ", data);
+        alert("Registration successfull: Please check your email for confirmation.");
+        checkSession();
+    }
+}
